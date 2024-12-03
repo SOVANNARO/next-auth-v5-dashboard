@@ -35,7 +35,7 @@ export const useSidebar = (pathname: string, sidebarLinks: SidebarLink[]) => {
   const prevPathRef = useRef(pathname);
 
   const toggleCollapse = useCallback(() => {
-    setCollapsed(prev => {
+    setCollapsed((prev: boolean) => {
       const newState = !prev;
       localStorage.setItem(COLLAPSED_KEY, JSON.stringify(newState));
       return newState;
